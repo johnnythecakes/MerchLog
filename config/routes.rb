@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-    resources :users
-    resources :products
+    resources :users do
+      resources :products
+    end
 
     root to: 'sessions#new'
 

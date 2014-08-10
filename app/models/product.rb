@@ -1,5 +1,6 @@
 class Product
   include Mongoid::Document
+  include Mongoid::Attributes::Dynamic 
   field :category, type: String
   field :subcategory, type: String
   field :make, type: String

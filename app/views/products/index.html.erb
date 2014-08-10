@@ -2,7 +2,7 @@
 <ul>
   <%if @product != nil %>
 <% @products.each do |p| %>
-    <li>  <%= link_to p.name, product_path(p.id) %></li>
+    <li>  <%= link_to p.name, user_product_path(p.id) %></li>
 <% end %>
 <% end %>
 </ul>

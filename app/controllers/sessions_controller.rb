@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
 			#Store as a cookie in the user browser as the ID of them,
 			#indicating they are logged in
 			session[:user_id] = u.id.to_s
-			redirect_to products_path
+			redirect_to user_products_path(u.id)
 		else
 			redirect_to new_session_path
 		end

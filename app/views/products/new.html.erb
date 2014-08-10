@@ -1,6 +1,6 @@
 <h1>Add New Merch</h1>
 
-<%= form_for @product do |f| %>
+<%= form_for [@user, @product] do |f| %>
 	<%=f.text_field :name, placeholder: "Merch Name" %><br />
 	<%=f.text_field :category, placeholder: "Category ie Electronics" %><br />
 	<%=f.text_field :subcategory, placeholder: "Subcategory ie TV" %><br />
@@ -17,4 +17,4 @@
 
 	<% end %>
 
-	<%= link_to "Back to the list!", products_path %>
+	<%= link_to "Back to the list!", user_products_path %>
