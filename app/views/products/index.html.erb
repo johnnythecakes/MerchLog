@@ -1,8 +1,14 @@
 <h1>Merch</h1>
 <ul>
-  <%if @product != nil %>
-<% @products.each do |p| %>
-    <li>  <%= link_to p.name, user_product_path(p.id) %></li>
-<% end %>
+  <li>
+	<% @products.each do |p| %>
+		<li>Category: <%= p.category %></li>
+		<li>Subcategory: <%= p.subcategory %></li>
+		<li>Purchase Price: <%= p.p_price %></li>
+		<li>Estimated Current Price: <%= p.c_price %></li>
+		<li>Warranty: <%= p.warranty %></li>
+		<li>Warranty Length: <%= p.w_length %></li>
+    <i>  <%= link_to p.name, user_product_path(@user.id, p.id) %></i>
+  </li>
 <% end %>
 </ul>

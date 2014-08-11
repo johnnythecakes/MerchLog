@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
+	before_action :check_security 
+
 	def index
 		@users = User.all
+	end
+
+	def show
+		@user = User.find(params[:id])
 	end
 
 	def new
@@ -35,6 +41,10 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def reactivate
+		@user = User.find(params[:id])
+	end
+
 	# def destroy
 	# 	@user = User.find(params[:id])
 	# 	@users.is_active = false
@@ -43,11 +53,13 @@ class UsersController < ApplicationController
 	# 	redirect_to users_path
 	# end
 
-	def show
-		@user = User.find(params[:id])
-	end
-
 	def user_params
     params.require(:user).permit(:f_name, :l_name, :password, :password_confirmation, :email, :address, :city, :state, :zip, :country)
   end
+
+  def check_security
+	 	if (!current_user) || (:product_id != current_user)
+			redirect_to new_session_path
+		end
+		end
 end
