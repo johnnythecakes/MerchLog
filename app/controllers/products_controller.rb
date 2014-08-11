@@ -46,7 +46,8 @@ class ProductsController < ApplicationController
 
 private
   def get_user
-    @user = current_user
+    # @user = current_user
+    @user = User.where(:id => params[:user_id]).first
   end
 
 end
