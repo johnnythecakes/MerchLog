@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :check_security 
+	# before_action :check_security 
 
 	def index
 		@users = User.all
@@ -56,10 +56,10 @@ class UsersController < ApplicationController
 	def user_params
     params.require(:user).permit(:f_name, :l_name, :password, :password_confirmation, :email, :address, :city, :state, :zip, :country)
   end
-
-  def check_security
-	 	if (!current_user) || (:product_id != current_user)
-			redirect_to new_session_path
-		end
-		end
+# private 
+#   def check_security
+# 	 	if (!current_user) || (:product_id != current_user)
+# 			redirect_to new_session_path
+# 		end
+# 		end
 end

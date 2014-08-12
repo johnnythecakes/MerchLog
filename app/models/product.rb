@@ -1,6 +1,6 @@
 class Product
   include Mongoid::Document
-  include Mongoid::Attributes::Dynamic 
+  # include Mongoid::Attributes::Dynamic 
   field :category, type: String
   field :subcategory, type: String
   field :make, type: String
@@ -10,7 +10,7 @@ class Product
   field :w_length, type: Float
   field :p_price, type: Float
   field :c_price, type: Float
-  field :purchased_on, :type => Date
+  field :purchased_on, type: Date
 
   belongs_to :user
 end

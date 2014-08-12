@@ -38,17 +38,17 @@
 	      </div>
 	      <button type="submit" class="btn btn-default">Submit</button>
 	    </form>
-	    <ul class="nav navbar-nav navbar-right">
-	      <li>
-	      	<% if current_user %>
-	      	Welcome, <%= current_user.f_name %>!
-	      	<%= link_to "Log out", session_path, method: :delete %>
-	      	<% else %>
-	      	<%= link_to "Sign up", new_user_path if !@is_signup %>
-	      	<%= link_to "Log in", new_session_path if !@is_login %>
-	      	<% end %>
-	      </li>
-	    </ul>
+		    <ul class="nav navbar-nav navbar-right">
+		      <li>
+		      	<% if current_user %>
+		      	Welcome, <%= current_user.f_name %>!
+		      	<%= link_to "Log out", session_path, method: :delete %>
+		      	<% else %>
+		      	<%= link_to "Sign up", new_user_path if !@is_signup %>
+		      	<%= link_to "Log in", new_session_path if !@is_login %>
+		      	<% end %>
+		      </li>
+		    </ul>
 	  </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-	before_action :get_user, 
+	# before_action :get_user
 
 	def index
 		@products = Product.all
@@ -10,20 +10,25 @@ class ProductsController < ApplicationController
 	end
 
 	def new
+		@user = current_user
 		@product = Product.new
 	end
 
 	def create
-		@product = @user.products.new(product_params)
+		@product = Product.new(product_params)
+		# @user = current_user
+		@product.user = current_user
 		if @product.save
 			redirect_to user_products_path
-		end
-	# else
-	# 	render 'new'
+	else
+		render 'new'
 	end
+end
 
 	def edit
+		if current_user == Product.find(params[:id]).user
 		@product = Product.find(params[:id])
+	end
 	end
 
 	def update
@@ -41,13 +46,13 @@ class ProductsController < ApplicationController
 	end
 
 	def product_params
-		params.require(:product).permit(:user_id, :name, :category, :subcategory, :make, :description, :warranty, :w_length, :p_price, :c_price, :purchased_on)
+		params.require(:product).permit(:name, :category, :subcategory, :make, :description, :warranty, :w_length, :p_price, :c_price, :purchased_on)
 	end
 
-private
-  def get_user
-    # @user = current_user
-    @user = User.where(:id => params[:user_id]).first
-  end
+	# private
+	#   def get_user
+	#     @user = current_user
+	#     @user = User.where(:id => params[:user_id]).first
+	# 	end
 
 end
