@@ -1,19 +1,46 @@
-<h1>Sign Up to start your Merch Log!</h1>
+ <div class="row">
 
-<%= form_for @user do |f| %>
-	<%=f.text_field :f_name, placeholder: "First Name" %><br />
-	<%=f.text_field :l_name, placeholder: "Last Name" %><br />
-	<%=f.text_field :address, placeholder: "Address" %><br />
-	<%=f.text_field :city, placeholder: "City" %><br />
-	<%=f.text_field :state, placeholder: "State" %><br />
-	<%=f.text_field :zip, placeholder: "Postal Code" %><br />
-	<%=f.text_field :country, placeholder: "Country" %><br />
-	<%=f.text_field :email, placeholder: "Email" %><br />
+   <div class="col-sm-4 col-sm-offset-4">
 
-	<%= f.password_field :password, placeholder: "password ..." %><br />
-	<%= f.password_field :password_confirmation, placeholder: "... and again" %>
+		<h1>Sign Up to start your Merch Log!</h1>
 
-	<%= f.submit "Sign up!" %>
+		<%= form_for @user, html: {class: 'form', role: 'form'} do |f| %>
+		
+			<div class= "form-group">
+				<%=f.text_field :f_name, placeholder: "First Name" , class: "form-control" %>
+			</div>
+			<div class= "form-group">
+				<%=f.text_field :l_name, placeholder: "Last Name" , class: "form-control" %>
+			</div>
+			<div class= "form-group">
+				<%=f.text_field :address, placeholder: "Address" , class: "form-control" %>
+			</div>
+			<div class= "form-group">
+				<%=f.text_field :city, placeholder: "City" , class: "form-control" %>
+			</div>
+			<div class= "form-group">
+				<%=f.text_field :state, placeholder: "State" , class: "form-control" %>
+			</div>
+			<div class= "form-group">
+				<%=f.text_field :zip, placeholder: "Postal Code" , class: "form-control" %>
+			</div>
+			<div class= "form-group">
+				<%=f.text_field :country, placeholder: "Country" , class: "form-control" %>
+			</div>
+			<div class= "form-group">
+				<%=f.text_field :email, placeholder: "Email" , class: "form-control" %>
+			</div>
+			<div class= "form-group">
+				<%= f.password_field :password, placeholder: "password ..." , class: "form-control" %>
+			</div>
+			<div class= "form-group">
+				<%= f.password_field :password_confirmation, placeholder: "... and again" , class: "form-control" %>
+			</div>
+			<div class= "form-group">
+				<%= f.submit "Sign up!" , class: "btn btn-primary btn-med" %>
+			</div>
 
 
-	<% end %>
+			<% end %>
+	</div>
+</div>
