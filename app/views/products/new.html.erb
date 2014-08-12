@@ -1,20 +1,45 @@
-<h1>Add New Merch</h1>
+<div class="row">
 
-<%= form_for [@user, @product] do |f| %>
-	<%=f.text_field :name, placeholder: "Merch Name" %><br />
-	<%=f.text_field :category, placeholder: "Category ie Electronics" %><br />
-	<%=f.text_field :subcategory, placeholder: "Subcategory ie TV" %><br />
-	<%=f.text_field :make, placeholder: "Make ie Sony" %><br />
-	<%=f.text_field :description, placeholder: "Description" %><br />
-	<%=f.text_field :warranty, placeholder: "Does this Merch have a warranty" %><br />
-	<%=f.text_field :w_length, placeholder: "If yes, how long in months?" %><br />
-	<%=f.text_field :p_price, placeholder: "How much did you buy it for?" %><br />
-	<%=f.text_field :c_price, placeholder: "How much do you think its worth now?" %><br />
-	<%=f.date_field :purchased_on, placeholder: "When did you buy it?" %><br />
+	<div class="col-sm-4 col-sm-offset-4">
+		<h1>Add New Merch</h1>
 
-	<%= f.submit "Submit Merch" %>
+		<%= form_for [@user, @product], html: {class: 'form', role: 'form'} do |f| %>
+			<div class= "form-group">
+				<%=f.text_field :name, placeholder: "Merch Name" , class: "form-control" %>
+			</div>
+			<div class= "form-group">
+				<%=f.text_field :category, placeholder: "Category ie Electronics" , class: "form-control" %>
+			</div>
+			<div class= "form-group">
+				<%=f.text_field :subcategory, placeholder: "Subcategory ie TV" , class: "form-control" %>
+			</div>
+			<div class= "form-group">
+				<%=f.text_field :make, placeholder: "Make ie Sony" , class: "form-control" %>
+			</div>
+			<div class= "form-group">
+				<%=f.text_field :description, placeholder: "Description" , class: "form-control" %>
+			</div>
+			<div class= "form-group">
+				<%=f.text_field :warranty, placeholder: "Does this Merch have a warranty" , class: "form-control" %>
+			</div>
+			<div class= "form-group">
+				<%=f.text_field :w_length, placeholder: "If yes, how long in months?" , class: "form-control" %>
+			</div>
+			<div class= "form-group">
+				<%=f.text_field :p_price, placeholder: "How much did you buy it for?" , class: "form-control" %>
+			</div>
+			<div class= "form-group">
+				<%=f.text_field :c_price, placeholder: "How much do you think its worth now?" , class: "form-control" %>
+			</div>
+			<div class= "form-group">
+				<%=f.date_field :purchased_on, placeholder: "When did you buy it?" , class: "form-control" %>
+			</div>
+			<div class= "form-group">
+				<%= f.submit "Submit Merch" , class: 'btn-primary btn-large' %>
+			</div>
 
+		<% end %>
 
-	<% end %>
-
-	<%= link_to "Back to the list!", user_products_path %>
+		<%= link_to "Back to the list!", user_products_path %>
+	</div>
+</div>
