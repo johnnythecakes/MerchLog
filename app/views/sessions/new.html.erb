@@ -3,7 +3,7 @@
 	<div class="col-sm-4 col-sm-offset-4">
 		<h1>Log in</h1>
 
-		<%= form_for @user, html: {class: 'form', role: 'form'} do |f| %>
+		<%= form_for @user,{url: session_path} do |f| %>
 			<div class= "form-group">
 				<%=f.text_field :email, placeholder: "me@me.com" , class: "form-control"%>
 			</div>

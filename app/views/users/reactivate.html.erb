@@ -1,0 +1,8 @@
+<h1>Reactivate User</h1>
+
+<%= form_for @user do |f| %>
+	<%=f.check_box :is_active %><br />
+
+	<%= f.submit "Reactivate me!" %>
+
+	<% end %>
