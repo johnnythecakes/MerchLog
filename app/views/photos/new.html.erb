@@ -1,0 +1,17 @@
+<div class="row">
+
+	<div class="col-sm-4 col-sm-offset-4">	
+		<h1> New Photos </h1>
+
+		  <%= form_for  @photo, url: {action: "create"} do |f| %>
+		  	<%= f.hidden_field :product_id, :value => @product.id %>
+		  	<%= f.file_field :image %>
+		  	<%= f.text_field :text, placeholder: "Description" %>
+		  	<%= f.submit "Submit", class: "btn btn-submit" %>
+		  <% end %>
+
+		<%= link_to "Back to the product!", product_path(:product_id) %>
+	</div>
+</div>
+
+<%= @product.id %>

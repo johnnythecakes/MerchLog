@@ -1,18 +1,25 @@
-<h1>Merch</h1>
-<div class="panel panel-default">
-		<% @products.each do |p| %>
-		<div class="panel-heading"> <%= p.name %></div>
-		<div class="panel-body">
-    <p><%= p.description %></p>
-  </div>
-			<ul class="list-group">
-				<li class="list-group-item">Category: <%= p.category %></li>
-				<li class="list-group-item">Subcategory: <%= p.subcategory %></li>
-				<li class="list-group-item">Purchase Price: <%= p.p_price %></li>
-				<li class="list-group-item">Estimated Current Price: <%= p.c_price %></li>
-				<li class="list-group-item">Warranty: <%= p.warranty %></li>
-				<li class="list-group-item">Warranty Length: <%= p.w_length %></li>
-		    <i>  <%= link_to "more info", user_product_path(current_user, p.id) %></i>
-		  </ul>
+<div class="col-sm-3 col-sm-offset-1">
+	<h1>Merch</h1>
+	<div class="panel panel-default">
+		<% if current_user != nil %>
+			<% @products.each do |p| %>
+			<div class="panel-heading"> <%= p.name %></div>
+			<div class="panel-body">
+	    <p><%= p.description %></p>
+	  </div>
+				<ul class="list-group">
+					<li class="list-group-item">Category: <%= p.category %></li>
+					<li class="list-group-item">Subcategory: <%= p.subcategory %></li>
+					<li class="list-group-item">Purchase Price: <%= p.p_price %></li>
+					<li class="list-group-item">Estimated Current Price: <%= p.c_price %></li>
+					<li class="list-group-item">Warranty: <%= p.warranty %></li>
+					<li class="list-group-item">Warranty Length: <%= p.w_length %></li>
+					<% p.photos.each do |i| %>
+						<%= image_tag p.image.url(:original) %>
+						<% end %>
+			    <i>  <%= link_to "more info", user_product_path(current_user, p.id) %></i>
+			  </ul>
+			<% end %>
+		</div>
 	<% end %>
 </div>

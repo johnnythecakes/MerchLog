@@ -3,6 +3,10 @@ Rails.application.routes.draw do
       resources :products
     end
 
+    resources :products do
+      resources :photos
+    end
+
     root to: 'sessions#new'
 
     resource :session , only: [:new, :create, :destroy]

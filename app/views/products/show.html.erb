@@ -19,6 +19,7 @@
 
 	<a href="">Warranty Info</a>
 	<a href="">User Manual</a>
-
-	<%= link_to "Back to the list!", user_products_path %>
+	
+	<%= link_to "Add photo", new_product_photo_path(@product.id) %>
+	<%= link_to "Back to the list!", user_products_path(:user_id) %>
 </div>
