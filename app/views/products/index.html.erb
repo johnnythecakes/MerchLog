@@ -15,7 +15,7 @@
 					<li class="list-group-item">Warranty: <%= p.warranty %></li>
 					<li class="list-group-item">Warranty Length: <%= p.w_length %></li>
 					<% p.photos.each do |i| %>
-						<%= image_tag p.image.url(:original) %>
+						<%= image_tag i.image.url(:original) %>
 						<% end %>
 			    <i>  <%= link_to "more info", user_product_path(current_user, p.id) %></i>
 			  </ul>
