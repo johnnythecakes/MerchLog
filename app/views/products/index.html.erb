@@ -22,8 +22,8 @@
 					<div class="caption">
 						<h3><%= p.name %></h3>
 						<p><%= p.description %></p>
-						<p><a href="#" class="btn btn-primary" role="button"
-						<%= link_to "more info", user_product_path(current_user, p.id) %>></a></p>
+						<p><a href="#">
+						<%= link_to "more info", user_product_path(current_user, p.id), class: 'btn btn-primary' %></a></p> 
 					</div>
 				</div>
 			</div>
