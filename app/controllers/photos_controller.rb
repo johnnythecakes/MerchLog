@@ -33,7 +33,7 @@ class PhotosController < ApplicationController
     # @photo.date ||= DateTime.now
     # Attach this criterion to a decision
     if @photo.save
-      redirect_to product_photo_path(:product_id,)
+      redirect_to product_photo_path(:product_id, @photo)
     else
       render 'new'
     end
