@@ -7,7 +7,7 @@ class Product
   field :name, type: String
   field :description, type: String
   field :warranty, type: Mongoid::Boolean, default: false
-  field :w_length, type: Float
+  field :w_length, type: Integer
   field :p_price, type: Float
   field :c_price, type: Float
   field :purchased_on, type: Date

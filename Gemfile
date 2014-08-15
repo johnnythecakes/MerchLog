@@ -33,7 +33,7 @@ gem 'spring',        group: :development
 
 # Use unicorn as the app server
 # gem 'unicorn'
-
+gem 'httparty'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

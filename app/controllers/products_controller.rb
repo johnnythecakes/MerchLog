@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-	# before_action :get_user
+	before_action :get_user
 
 	def index
 		@products = Product.all
@@ -7,6 +7,8 @@ class ProductsController < ApplicationController
 
 	def show
 		@product = Product.find(params[:id])
+		@war_exp = @product.purchased_on + @product.w_length.months
+		@remaining_w = (@war_exp - Date.today).to_i 
 	end
 
 	def new
@@ -49,10 +51,10 @@ end
 		params.require(:product).permit(:name, :category, :subcategory, :make, :description, :warranty, :w_length, :p_price, :c_price, :purchased_on)
 	end
 
-	# private
-	#   def get_user
-	#     @user = current_user
-	#     @user = User.where(:id => params[:user_id]).first
-	# 	end
+	private
+	  def get_user
+	    @user = current_user
+	    @user = User.where(:id => params[:user_id]).first
+		end
 
 end

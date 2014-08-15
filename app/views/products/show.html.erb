@@ -11,9 +11,11 @@
 		<li>Category: <%= @product.category %></li>
 		<li>Subcategory: <%= @product.subcategory %></li>
 		<li>Purchase Price: <%= @product.p_price %></li>
+		<li>Purchase Price: <%= @product.purchased_on %></li>
 		<li>Estimated Current Price: <%= @product.c_price %></li>
 		<li>Warranty: <%= @product.warranty %></li>
 		<li>Warranty Length: <%= @product.w_length %></li>
+		<li>Remaining Days: <%= @remaining_w %></li>
 	</ul>
 	<p><%= @product.description %></p>
 
