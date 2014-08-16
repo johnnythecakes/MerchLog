@@ -2,13 +2,15 @@ class ProductsController < ApplicationController
 	before_action :get_user
 
 	def index
-		@products = Product.all
+		@products = Product.where(:user_id => current_user.id)
 	end
 
 	def show
 		@product = Product.find(params[:id])
 		@war_exp = @product.purchased_on + @product.w_length.months
+		@war_tot = (@war_exp - @product.purchased_on).to_i
 		@remaining_w = (@war_exp - Date.today).to_i 
+		@days_percent = (@remaining_w.to_f / @war_tot.to_f) * 100
 	end
 
 	def new
