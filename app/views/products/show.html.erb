@@ -1,23 +1,27 @@
 <div class="jumbotron">
 	<h1><%= @product.name %></h1>
+	
+	<div class="row">
+		<div class="col-md-6">
+			<%= image_tag "@product.photo.url(:large).to_s" %>
+		</div>
+	<div class="col-md-6">
 
-	<img src="" alt="">
-
-	<h2>Merch Info</h2>
-	<h3>Brand/Make: <%= @product.make %></h3>
-
-	<h4>Merch Specs:</h4>
-	<ul>
-		<li>Category: <%= @product.category %></li>
-		<li>Subcategory: <%= @product.subcategory %></li>
-		<li>Purchase Price: $<%= @product.p_price %></li>
-		<li>Purchased On: <%= @product.purchased_on %></li>
-		<li>Estimated Current Price: $<%= @product.c_price %></li>
-		<li>Warranty: <%= @product.warranty %></li>
-		<li>Merch Warranty Length: <%= @product.w_length %> months</li>
-		<li>Remaining Days Under Warranty: <%= @remaining_w %></li>
-	</ul>
-	<p><%= @product.description %></p>
+			<h4>Merch Specs:</h4>
+			<ul class="list-group">
+				<li class="list-group-item">Brand/Make: <%= @product.make %></li>
+				<li class="list-group-item">Category: <%= @product.category %></li>
+				<li class="list-group-item">Subcategory: <%= @product.subcategory %></li>
+				<li class="list-group-item">Purchase Price: $<%= @product.p_price %></li>
+				<li class="list-group-item">Purchased On: <%= @product.purchased_on %></li>
+				<li class="list-group-item">Estimated Current Price: $<%= @product.c_price %></li>
+				<li class="list-group-item">Warranty: <%= @product.warranty %></li>
+				<li class="list-group-item">Merch Warranty Length: <%= @product.w_length %> months</li>
+				<li class="list-group-item">Remaining Days Under Warranty: <%= @remaining_w %></li>
+			</ul>
+			<p><%= @product.description %></p>
+	</div>
+</div>
 
 	<h3>Remaining days under warranty:</h3>
 	<div class="progress">

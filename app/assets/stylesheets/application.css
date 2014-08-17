@@ -26,4 +26,8 @@ body {
  		height:40px;
  		line-height: 40px;
  	}
+
+ 	ul {
+ 		line-height: 20px;
+ 	}
  }

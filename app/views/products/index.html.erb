@@ -3,7 +3,7 @@
 			<% @products.each do |p| %>
 				<div class="col-sm-6 col-md-4">
 					<div class="thumbnail">
-						<div id="myCarousel" class="carousel slide">
+						<div id="myCarousel" class="carousel slide" >
 							<ol class="carousel-indicators">
 								<% p.photos.each_with_index do |phot, index| %>
 								<li data-target="#myCarousel" data-slide-to="<%= index + 1 %>" 

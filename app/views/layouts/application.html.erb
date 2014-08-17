@@ -4,19 +4,29 @@
   <title>MerchLogApp</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+
   <script>
   $(function(){
     $('.carousel').carousel({
-      interval: 2000
+      interval: 2500
     });
   });
   </script>
+
+<!-- to look better on mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <%= csrf_meta_tags %>
+ 
 </head>
 <body>
-<%= render 'layouts/nav' %>
-<div class="container">
-<%= yield %>
-</div>
+
+  <%= render 'layouts/nav' %>
+  
+  <div class="container">
+      
+      <%= yield %>
+  
+  </div>
+
 </body>
 </html>
