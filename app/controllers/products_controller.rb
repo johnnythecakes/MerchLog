@@ -3,6 +3,19 @@ class ProductsController < ApplicationController
 
 	def index
 		@products = Product.where(:user_id => current_user.id)
+		# my_product_filter = params[:productfilter]
+		# case my_product_filter
+		# when "showall"
+		# 	@products = Product.where(:user_id => current_user.id)
+		# when "warranties"
+		# 	@products = Product.where(:user_id => current_user.id) && @products = Product.where(:warranty => true)
+		# when "light"
+		# 	@beans = Bean.where(:roast => "light")
+		# when "instock"
+		# 	@beans = Bean.where(:quantity.gt => 0)
+		# else
+		# 	@products = Product.where(:user_id => current_user.id)
+		# end
 	end
 
 	def show
@@ -11,7 +24,6 @@ class ProductsController < ApplicationController
 		@war_tot = (@war_exp - @product.purchased_on).to_i
 		@remaining_w = (@war_exp - Date.today).to_i 
 		@days_percent = (@remaining_w.to_f / @war_tot.to_f) * 100
-		# if @days_percent <= .30
 	end
 
 	def new

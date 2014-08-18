@@ -1,3 +1,19 @@
+	<% 
+=begin %> 
+	<div>
+		<p>
+  		<%= link_to "All My MERCH", user_products_path(u.id)(productfilter:"showall") %>
+  		<br>
+		  <%= link_to "Dark Roasts Only",  beans_path(beanfilter:"dark") %>
+		  <br>
+		  <%= link_to "Light Roasts Only", beans_path(beanfilter:"light") %>
+		  <br>
+		  <%= link_to "In Stock", beans_path(beanfilter:"instock") %>
+		</p>
+	</div>
+<% 
+=end %>
+
 	<div class="row">
 		<% if current_user != nil %>
 			<% @products.each do |p| %>
