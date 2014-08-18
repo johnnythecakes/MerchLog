@@ -2,22 +2,71 @@
 	<h1><%= @product.name %></h1>
 	
 	<div class="row">
-		<div class="col-md-6">
-			<%= image_tag "@product.photo.url(:large).to_s" %>
-		</div>
-	<div class="col-md-6">
+		<div class="row">
+				<div class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<div id="myCarousel" class="carousel slide" >
+							<ol class="carousel-indicators">
+								<% @product.photos.each_with_index do |phot, index| %>
+								<li data-target="#myCarousel" data-slide-to="<%= index + 1 %>" 
+									class="<%= index == 0 ? 'active' : ''%>"></li>
+								<% end %>
+							</ol>
 
+							<div class="carousel-inner">
+								<% @product.photos.each_with_index do |phot, index| %>
+									<div class="<%= index == 0 ? 'item active' : 'item' %>">
+										<%= image_tag phot.image.url(:medium).to_s %>
+									</div> 
+								<% end %>      
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+
+
+	<div class="col-md-6">
 			<h4>Merch Specs:</h4>
 			<ul class="list-group">
-				<li class="list-group-item">Brand/Make: <%= @product.make %></li>
-				<li class="list-group-item">Category: <%= @product.category %></li>
-				<li class="list-group-item">Subcategory: <%= @product.subcategory %></li>
-				<li class="list-group-item">Purchase Price: $<%= @product.p_price %></li>
-				<li class="list-group-item">Purchased On: <%= @product.purchased_on %></li>
-				<li class="list-group-item">Estimated Current Price: $<%= @product.c_price %></li>
-				<li class="list-group-item">Warranty: <%= @product.warranty %></li>
-				<li class="list-group-item">Merch Warranty Length: <%= @product.w_length %> months</li>
-				<li class="list-group-item">Remaining Days Under Warranty: <%= @remaining_w %></li>
+				<li class="list-group-item">
+					
+					<div class="row">
+					  <div class="col-md-5">Brand/Make:</div>
+  					<div class="col-md-7"><%= @product.make %></div>
+					</div>
+					<div class="row">
+					  <div class="col-md-5">Category:</div>
+  					<div class="col-md-7"><%= @product.category %></div>
+					</div>
+					<div class="row">
+					  <div class="col-md-5">Subcategory:</div>
+  					<div class="col-md-7"><%= @product.subcategory %></div>
+					</div>
+					<div class="row">
+					  <div class="col-md-5">Purchase Price:</div>
+  					<div class="col-md-7">$<%= @product.p_price %></div>
+					</div>
+					<div class="row">
+					  <div class="col-md-5">Purchased On:</div>
+  					<div class="col-md-7"><%= @product.purchased_on %></div>
+					</div>
+					<div class="row">
+					  <div class="col-md-5">Estimated Current Price:</div>
+  					<div class="col-md-7">$<%= @product.c_price %></div>
+					</div>
+					<div class="row">
+					  <div class="col-md-5">Warranty:</div>
+  					<div class="col-md-7"><%= @product.warranty %></div>
+					</div>
+					<div class="row">
+					  <div class="col-md-5">Merch Warranty Length:</div>
+  					<div class="col-md-7"><%= @product.w_length %> months</div>
+					</div>
+					<div class="row">
+					  <div class="col-md-5">Remaining Days Under Warranty:</div>
+  					<div class="col-md-7"><%= @remaining_w %></div>
+					</div>
 			</ul>
 			<p><%= @product.description %></p>
 	</div>
