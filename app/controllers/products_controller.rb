@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
 		@war_tot = (@war_exp - @product.purchased_on).to_i
 		@remaining_w = (@war_exp - Date.today).to_i 
 		@days_percent = (@remaining_w.to_f / @war_tot.to_f) * 100
+		# if @days_percent <= .30
 	end
 
 	def new
