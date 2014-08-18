@@ -2,8 +2,7 @@
 	<h1><%= @product.name %></h1>
 	
 	<div class="row">
-		<div class="row">
-				<div class="col-sm-6 col-md-4">
+				<div class="col-sm-6">
 					<div class="thumbnail">
 						<div id="myCarousel" class="carousel slide" >
 							<ol class="carousel-indicators">
@@ -23,7 +22,6 @@
 						</div>
 					</div>
 				</div>
-		</div>
 
 
 	<div class="col-md-6">
@@ -32,40 +30,40 @@
 				<li class="list-group-item">
 					
 					<div class="row">
-					  <div class="col-md-5">Brand/Make:</div>
-  					<div class="col-md-7"><%= @product.make %></div>
+					  <div class="col-md-6">Brand/Make:</div>
+  					<div class="col-md-6"><%= @product.make %></div>
 					</div>
 					<div class="row">
-					  <div class="col-md-5">Category:</div>
-  					<div class="col-md-7"><%= @product.category %></div>
+					  <div class="col-md-6">Category:</div>
+  					<div class="col-md-6"><%= @product.category %></div>
 					</div>
 					<div class="row">
-					  <div class="col-md-5">Subcategory:</div>
-  					<div class="col-md-7"><%= @product.subcategory %></div>
+					  <div class="col-md-6">Subcategory:</div>
+  					<div class="col-md-6"><%= @product.subcategory %></div>
 					</div>
 					<div class="row">
-					  <div class="col-md-5">Purchase Price:</div>
-  					<div class="col-md-7">$<%= @product.p_price %></div>
+					  <div class="col-md-6">Purchase Price:</div>
+  					<div class="col-md-6">$<%= @product.p_price %></div>
 					</div>
 					<div class="row">
-					  <div class="col-md-5">Purchased On:</div>
-  					<div class="col-md-7"><%= @product.purchased_on %></div>
+					  <div class="col-md-6">Purchased On:</div>
+  					<div class="col-md-6"><%= @product.purchased_on %></div>
 					</div>
 					<div class="row">
-					  <div class="col-md-5">Estimated Current Price:</div>
-  					<div class="col-md-7">$<%= @product.c_price %></div>
+					  <div class="col-md-6">Estimated Current Price:</div>
+  					<div class="col-md-6">$<%= @product.c_price %></div>
 					</div>
 					<div class="row">
-					  <div class="col-md-5">Warranty:</div>
-  					<div class="col-md-7"><%= @product.warranty %></div>
+					  <div class="col-md-6">Warranty:</div>
+  					<div class="col-md-6"><%= @product.warranty %></div>
 					</div>
 					<div class="row">
-					  <div class="col-md-5">Merch Warranty Length:</div>
-  					<div class="col-md-7"><%= @product.w_length %> months</div>
+					  <div class="col-md-6">Merch Warranty Length:</div>
+  					<div class="col-md-6"><%= @product.w_length %> months</div>
 					</div>
 					<div class="row">
-					  <div class="col-md-5">Remaining Days Under Warranty:</div>
-  					<div class="col-md-7"><%= @remaining_w %></div>
+					  <div class="col-md-6">Remaining Days Under Warranty:</div>
+  					<div class="col-md-6"><%= @remaining_w %></div>
 					</div>
 			</ul>
 			<p><%= @product.description %></p>
