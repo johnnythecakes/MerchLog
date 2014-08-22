@@ -15,8 +15,14 @@ class User
   validates :f_name, :l_name, :password, :email, presence: true
 
   validates_uniqueness_of :email
+  # validates :email,
+  #   presence: {message: "DUDE WE NEED YOUR EMAIL!!!"},
+  #  format: {with: /\A[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})\z/,
+  #           message: "YOUR EMAIL FORMAT SUCKS DUDE"}
 
   # validates :zip, 
+
+  # validate :email_must_have_name_in_it
 
   has_secure_password
 

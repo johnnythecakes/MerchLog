@@ -61,5 +61,10 @@ class UsersController < ApplicationController
 # 	 	if (!current_user) || (:product_id != current_user)
 # 			redirect_to new_session_path
 # 		end
-# 		end
+# 	end
+		# def email_must_have_name_in_it
+	  #   if email[0..name.length-1] != name
+	  #     errors.add(:email, "First part of email adddy MUST be your name, fool!")
+	  #   end
+	  # end
 end
